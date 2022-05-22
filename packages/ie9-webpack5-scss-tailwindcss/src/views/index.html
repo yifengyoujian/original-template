@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% for (var i = 0; i < htmlWebpackPlugin.files.css.length; i++) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[i] %>" />
+    <% } %>
+  </head>
+  <body>
+    <%= require('html-loader!@components/Header.html').default %>
+
+    <div class="main">
+      <%= require('html-loader!@components/Card.html').default %>
+    </div>
+
+    <%= require('html-loader!@components/Footer.html').default %>
+
+
+    <% for (var i = 0; i < htmlWebpackPlugin.files.js.length; i++) { %>
+    <script src="<%= htmlWebpackPlugin.files.js[i] %>"></script>
+    <% } %>
+  </body>
+</html>

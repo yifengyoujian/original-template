@@ -1,3 +1,3 @@
 # original-template
 
-Some useful configurations for native development
+Some modern configurations for original development
